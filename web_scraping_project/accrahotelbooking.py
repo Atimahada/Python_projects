@@ -19,7 +19,7 @@ with open('accra_avail_hotels.csv', 'w') as csv_file:
         for property_ in properties:
             try:
                 name = property_.find('div', class_='fcab3ed991 a23c043802').text
-                price = property_.find('span', class_="fcab3ed991 bd73d13072").text
+                price = property_.find('span', class_="fcab3ed991 bd73d13072").text[3:]
                 rating = property_.find('div', class_="b5cd09854e d10a6220b4").text
 
             except AttributeError:
